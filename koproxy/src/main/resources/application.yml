@@ -1,0 +1,44 @@
+server:
+  port: 8081
+spring:
+  r2dbc:
+    url: r2dbc:postgresql:failover://${POSTGRES_CONNECT_STRING:localhost:5432,localhost:5432/postgres}
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:postgres}
+    properties:
+#      sslMode: VERIFY_CA
+#      sslRootCert: C:\Users\vitaliy\AppData\Roaming\postgresql\root.crt
+#      sslKey: C:\Users\vitaliy\AppData\Roaming\postgresql\pkcs8_key_netty.pem
+#      sslCert: C:\Users\vitaliy\AppData\Roaming\postgresql\postgresql.crt
+      sslMode: ${POSTGRES_SSL_MODE:DISABLE}
+      sslRootCert: ${POSTGRES_SSL_ROOT_CERT:C://Users/vitaliy/AppData/Roaming/postgresql/root.crt}
+      sslKey: ${POSTGRES_SSL_KEY:C://Users/vitaliy/AppData/Roaming/postgresql/pkcs8_key_netty.pem}
+      sslCert: ${POSTGRES_SSL_CERT:C://Users/vitaliy/AppData/Roaming/postgresql/postgresql.crt}
+
+
+spa:
+  backend-url: ${SPA_BACKEND_URL:/ui-api-web/cross}
+  frontend-url: ${SPA_FRONTEND_URL:/ui/cross}
+
+proxy:
+  httpclient:
+    connectTimeout: ${HTTP_CLIENT_TIMEOUT:}
+    responseTimeout: ${HTTP_CLIENT_RESPONSE_TIMEOUT:900000}
+    pool:
+      type: ${POOL_TYPE:FIXED}
+      acquireTimeout: 1800
+    ssl:
+      mtlsEnabled: ${MTLS_ENABLED:true}
+      mtlsCert: ${PROXY_MTLS_CERT:E://ift/mtls_cert}
+      mtlsKey: ${PROXY_MTLS_KEY:E://ift/tls.p12}
+      mtlsKeyPassword: ${PROXY_MTLS_KEY_PASSWORD:123456789}
+      trustStore: ${PROXY_TRUST_STORE:E://cert}
+      trustStorePassword: ${PROXY_TRUST_STORE_PASSWORD:uFZR1JHUBfys}
+      trustStoreProvider: ${PROXY_TRUST_STORE_PROVIDER:}
+      trustStoreType: ${PROXY_TRUST_STORE_TYPE:JKS}
+      useInsecureTrustManager: ${USE_INSECURE_TRUST_MANAGER:false}
+
+epa:
+  enabled: ${EPA_ENABLE_VALIDATION:true}
+  redirect_to_url: ${EPA_REDIRECT_TO_URL:bbbc}
+  crash: ${EPA_CRASH_ERROR:false}
