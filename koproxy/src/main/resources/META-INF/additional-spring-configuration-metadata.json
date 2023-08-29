@@ -1,0 +1,43 @@
+{
+  "properties": [
+    {
+      "name": "spring:r2dbc.url",
+      "type": "java.lang.String",
+      "description": "Description for spring:r2dbc.url."
+    },
+    {
+      "name": "spring:r2dbc.username",
+      "type": "java.lang.String",
+      "description": "Description for spring:r2dbc.username."
+    },
+    {
+      "name": "spring:r2dbc.password",
+      "type": "java.lang.String",
+      "description": "Description for spring:r2dbc.password."
+    },
+    {
+      "name": "proxy.httpclient.ssl.keyStore",
+      "type": "java.lang.String",
+      "description": "Description for proxy.httpclient.ssl.keyStore."
+    },
+    {
+      "name": "proxy.httpclient.ssl.keyStorePassword",
+      "type": "java.lang.String",
+      "description": "Description for proxy.httpclient.ssl.keyStorePassword."
+    },
+    {
+      "name": "proxy.httpclient.ssl.trustStore",
+      "type": "java.lang.String",
+      "description": "Description for proxy.httpclient.ssl.trustStore."
+    },
+    {
+      "name": "proxy.httpclient.ssl.trustStorePassword",
+      "type": "java.lang.String",
+      "description": "Description for proxy.httpclient.ssl.trustStorePassword."
+    },
+    {
+      "name": "proxy.httpclient.ssl.useInsecureTrustManager",
+      "type": "java.lang.String",
+      "description": "Description for proxy.httpclient.ssl.useInsecureTrustManager."
+    }
+  ] }
