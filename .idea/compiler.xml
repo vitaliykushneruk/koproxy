@@ -7,8 +7,11 @@
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-configuration-processor/2.6.3/spring-boot-configuration-processor-2.6.3.jar" />
         </processorPath>
-        <module name="koproxy.koproxy.main" />
+        <module name="repository.koproxy.main" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="17">
+      <module name="koproxy.koproxy" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
